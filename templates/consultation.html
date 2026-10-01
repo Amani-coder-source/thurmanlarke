@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Request Consultation | Thurmanlark
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                THURMANLARK
+            </div>
+
+            <div class="nav-links">
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/dashboard">
+                    Dashboard
+                </a>
+
+                <a href="/logout">
+                    Logout
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <main class="auth-page">
+
+        <div class="auth-container">
+
+
+            <div class="auth-heading">
+
+                <p class="small-title">
+                    THURMANLARK CONSULTING
+                </p>
+
+                <h1>
+                    Request a Consultation
+                </h1>
+
+                <p>
+                    Tell us about your business and
+                    what you need help with.
+                </p>
+
+            </div>
+
+
+
+            <form
+                action="/consultation"
+                method="POST"
+            >
+
+
+                <!-- Service -->
+
+                <div class="form-group">
+
+                    <label for="service">
+                        Consulting Service
+                    </label>
+
+                    <select
+                        id="service"
+                        name="service"
+                        required
+                    >
+
+                        <option value="">
+                            Select a service
+                        </option>
+
+                        <option value="Business Consulting">
+                            Business Consulting
+                        </option>
+
+                        <option value="Business Strategy">
+                            Business Strategy
+                        </option>
+
+                        <option value="Management Consulting">
+                            Management Consulting
+                        </option>
+
+                        <option value="Technology Consulting">
+                            Technology Consulting
+                        </option>
+
+                        <option value="Marketing Consulting">
+                            Marketing Consulting
+                        </option>
+
+                        <option value="Business Advisory">
+                            Business Advisory
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Business Name -->
+
+                <div class="form-group">
+
+                    <label for="business_name">
+                        Business Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="business_name"
+                        name="business_name"
+                        placeholder="Enter your business name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- Business Type -->
+
+                <div class="form-group">
+
+                    <label for="business_type">
+                        Business Type
+                    </label>
+
+                    <select
+                        id="business_type"
+                        name="business_type"
+                        required
+                    >
+
+                        <option value="">
+                            Select business type
+                        </option>
+
+                        <option value="Startup">
+                            Startup
+                        </option>
+
+                        <option value="Small Business">
+                            Small Business
+                        </option>
+
+                        <option value="Medium Business">
+                            Medium Business
+                        </option>
+
+                        <option value="Large Business">
+                            Large Business
+                        </option>
+
+                        <option value="Individual / Entrepreneur">
+                            Individual / Entrepreneur
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        What do you need help with?
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="6"
+                        placeholder="Describe your business challenge, goals or what you would like help with..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- Budget -->
+
+                <div class="form-group">
+
+                    <label for="budget">
+                        Estimated Budget
+                    </label>
+
+                    <select
+                        id="budget"
+                        name="budget"
+                        required
+                    >
+
+                        <option value="">
+                            Select your estimated budget
+                        </option>
+
+                        <option value="Under $1,000">
+                            Under $1,000
+                        </option>
+
+                        <option value="$1,000 - $5,000">
+                            $1,000 - $5,000
+                        </option>
+
+                        <option value="$5,000 - $10,000">
+                            $5,000 - $10,000
+                        </option>
+
+                        <option value="$10,000 - $25,000">
+                            $10,000 - $25,000
+                        </option>
+
+                        <option value="$25,000+">
+                            $25,000+
+                        </option>
+
+                        <option value="Not sure">
+                            Not sure
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Preferred Date -->
+
+                <div class="form-group">
+
+                    <label for="preferred_date">
+                        Preferred Consultation Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="preferred_date"
+                        name="preferred_date"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="auth-button"
+                >
+                    Submit Consultation Request
+                </button>
+
+
+            </form>
+
+
+
+            <div class="auth-footer">
+
+                <a href="/dashboard">
+                    Back to Dashboard
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <footer>
+
+        <div class="footer-bottom">
+
+            © 2026 Thurmanlark Consulting.
+            All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Thurmanlark</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                THURMANLARK
+            </div>
+
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/register">Create Account</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <main class="auth-page">
+
+        <div class="auth-container">
+
+            <div class="auth-heading">
+
+                <p class="small-title">
+                    THURMANLARK
+                </p>
+
+                <h1>
+                    Welcome back
+                </h1>
+
+                <p>
+                    Login to access your Thurmanlark
+                    client account.
+                </p>
+
+            </div>
+
+
+            <form action="/login" method="POST">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit" class="auth-button">
+                    Login
+                </button>
+
+            </form>
+
+
+            <div class="auth-footer">
+
+                <p>
+                    Don't have an account?
+                    <a href="/register">Create one</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-bottom">
+            © 2026 Thurmanlark. All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

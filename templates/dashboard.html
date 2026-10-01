@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard | Thurmanlark Consulting</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                THURMANLARK
+            </div>
+
+            <div class="nav-links">
+
+                <a href="/">
+                    Home
+                </a>
+
+                <a href="/logout">
+                    Logout
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main class="auth-page">
+
+        <div class="auth-container">
+
+            <div class="auth-heading">
+
+                <p class="small-title">
+                    THURMANLARK CONSULTING
+                </p>
+
+                <h1>
+                    Welcome, {{.Name}}
+                </h1>
+
+                <p>
+                    Welcome to your Thurmanlark
+                    consulting client portal.
+                </p>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    My Profile
+                </h2>
+
+                <p>
+                    <strong>Name:</strong>
+                    {{.Name}}
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    {{.Email}}
+                </p>
+
+                <p>
+                    <strong>Account Type:</strong>
+                    {{.Role}}
+                </p>
+
+            </div>
+
+
+            <!-- CONSULTING SERVICES -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Consulting Services
+                </h2>
+
+                <p>
+                    Explore professional consulting
+                    services provided by Thurmanlark.
+                </p>
+
+                <a
+                    href="/services"
+                    class="auth-button"
+                >
+                    View Consulting Services
+                </a>
+
+            </div>
+
+
+            <!-- CONSULTATION -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Request a Consultation
+                </h2>
+
+                <p>
+                    Tell us about your business needs
+                    and request assistance from a
+                    Thurmanlark consultant.
+                </p>
+
+                <a
+                    href="/consultation"
+                    class="auth-button"
+                >
+                    Request Consultation
+                </a>
+
+            </div>
+
+
+            <!-- PROJECTS -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    My Projects
+                </h2>
+
+                <p>
+                    View your current and completed
+                    consulting projects.
+                </p>
+
+                <a
+                    href="/projects"
+                    class="auth-button"
+                >
+                    View My Projects
+                </a>
+
+            </div>
+
+
+            <!-- DOCUMENTS -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    My Documents
+                </h2>
+
+                <p>
+                    Manage documents, reports and
+                    files related to your consulting
+                    projects.
+                </p>
+
+                <a
+                    href="/documents"
+                    class="auth-button"
+                >
+                    View Documents
+                </a>
+
+            </div>
+
+
+            <!-- APPOINTMENTS -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    Appointments
+                </h2>
+
+                <p>
+                    Manage your upcoming consulting
+                    appointments.
+                </p>
+
+                <a
+                    href="/appointments"
+                    class="auth-button"
+                >
+                    View Appointments
+                </a>
+
+            </div>
+
+
+            <div class="auth-footer">
+
+                <a href="/logout">
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-bottom">
+            © 2026 Thurmanlark Consulting.
+            All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
