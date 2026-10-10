@@ -1,17 +1,25 @@
+
 package main
 
 import (
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
 	fmt.Println("Thurmanlarke server is starting...")
 
+	// Load the port provided by the hosting service.
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	// Homepage
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		// Only handle the homepage at "/"
 		if r.URL.Path != "/" {
 			http.NotFound(w, r)
 			return
@@ -19,18 +27,17 @@ func main() {
 
 		tmpl, err := template.ParseFiles("templates/index.html")
 		if err != nil {
+			log.Println("Homepage error:", err)
 			http.Error(
 				w,
 				"Unable to load homepage",
 				http.StatusInternalServerError,
 			)
-			fmt.Println("Homepage error:", err)
 			return
 		}
 
-		err = tmpl.Execute(w, nil)
-		if err != nil {
-			fmt.Println("Homepage rendering error:", err)
+		if err := tmpl.Execute(w, nil); err != nil {
+			log.Println("Homepage rendering error:", err)
 		}
 	})
 
@@ -43,33 +50,32 @@ func main() {
 
 		tmpl, err := template.ParseFiles("templates/privacy.html")
 		if err != nil {
+			log.Println("Privacy page error:", err)
 			http.Error(
 				w,
 				"Unable to load Privacy Notice",
 				http.StatusInternalServerError,
 			)
-			fmt.Println("Privacy page error:", err)
 			return
 		}
 
-		err = tmpl.Execute(w, nil)
-		if err != nil {
-			fmt.Println("Privacy page rendering error:", err)
+		if err := tmpl.Execute(w, nil); err != nil {
+			log.Println("Privacy page rendering error:", err)
 		}
 	})
 
-	// Serve CSS, JavaScript and images
+	// Serve CSS, JavaScript, and images.
 	fileServer := http.FileServer(http.Dir("./static"))
-
 	http.Handle(
 		"/static/",
 		http.StripPrefix("/static/", fileServer),
 	)
 
-	fmt.Println("Server running on http://localhost:8080")
+	// Start the server.
+	address := "0.0.0.0:" + port
+	fmt.Println("Thurmanlarke server listening on port", port)
 
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
-		fmt.Println("Server error:", err)
+	if err := http.ListenAndServe(address, nil); err != nil {
+		log.Fatal("Server error:", err)
 	}
 }
